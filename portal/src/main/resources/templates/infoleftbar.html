@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+<!--    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">-->
+<link rel="stylesheet" th:href="@{/css/index.css?data=2}">
+<link rel="stylesheet"
+	th:href="@{/node_modules/swiper/dist/css/swiper.min.css}">
+<script th:src="@{/node_modules/jquery/dist/jquery.min.js}"></script>
+<script th:src="@{/node_modules/swiper/dist/js/swiper.js}"></script>
+<script th:src="@{/js/public.js}"></script>
+<script th:src="@{/js/portal/header.js}"></script>
+<script th:src="@{/js/portal/productInfo.js?data=2}"></script>
+
+<!--    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>-->
+</head>
+
+<body style="background-color: #f7f7f7;">
+	<div class="infoleftbar" th:fragment="infoleftbar">
+		<div class="left-panel">
+			<div class="title" style="font-size:25px">联系我们</div>
+			<ul>
+				<li>电话：010-56260611</li>
+				<li>E-mail:bjzgyt@126.com</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

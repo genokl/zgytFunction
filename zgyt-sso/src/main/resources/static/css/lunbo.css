@@ -1,0 +1,54 @@
+img{ display: block; border:none;}
+ul,li{ list-style: none;}
+.lubo{ width: 100%; min-width:1000px;clear: both; position: relative; height:300px;}
+.lubo_box{ position: relative; width: 100%; height:368px; }
+.lubo_box li{ float: left;position: absolute; top: 0; left: 0; width: 100%; height:368px; opacity: 0;filter:alpha(opacity=0);}
+.lubo_box li a{ display: block;width: 100%;  height: 100%;}
+
+.lubo_box li img{ width: 100%; height: 368px;}
+
+/*圆点*/
+.cir_box{ overflow: hidden; position: absolute; z-index: 100;}
+.cir_box li{ float: left; width: 30px; height: 5px; margin:0 5px; cursor: pointer; background: #fff; opacity: 0.8;filter:alpha(opacity=80);}
+.cir_on{ background: #000 !important;}
+
+/*按钮*/
+.lubo_btn{ position: absolute; width: 100%;top:38%;}
+.left_btn, .right_btn{ width: 60px; height: 80px;opacity: 0.8;filter:alpha(opacity=80); cursor: pointer; color: #fff; line-height: 80px; font-size: 30px; text-align: center;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+.left_btn{ float: left;}
+.right_btn{ float: right;}
+
+
+/*轮播2*/
+#scrollPics{
+    height: 230px;
+    width: 420px;
+    margin:8px auto;
+    overflow: hidden;
+    position:relative;
+}
+.slider{
+	width:2100px;
+	overflow: hidden;
+}
+.slider li{
+	float:left;
+}
+.num{
+    position:absolute;
+    bottom:5%;
+    right:35%;
+}
+#scrollPics .num li{
+    float: left;
+    width: 30px;
+    height: 4px;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 3px 5px;
+    background-color: #ddd;
+}
+#scrollPics .num li.on{
+    background-color: #000;
+}
+

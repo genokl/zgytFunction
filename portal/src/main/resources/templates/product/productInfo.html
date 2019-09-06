@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+<!--    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">-->
+<link rel="stylesheet" th:href="@{/css/index.css?data=2}">
+<link rel="stylesheet"
+	th:href="@{/node_modules/swiper/dist/css/swiper.min.css}">
+<script th:src="@{/node_modules/jquery/dist/jquery.min.js}"></script>
+<script th:src="@{/node_modules/swiper/dist/js/swiper.js}"></script>
+<script th:src="@{/js/public.js}"></script>
+<script th:src="@{/js/portal/header.js}"></script>
+<script th:src="@{/js/portal/product/productInfo.js?data=2}"></script>
+
+<!--    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>-->
+</head>
+
+<body style="background-color: #f7f7f7;">
+	<div class="headerBar" th:replace="header :: header"></div>
+	<div class="second-header">
+		<div class="w">
+			<div class="title">
+				<span> 您当前的位置： </span><span>/</span><a href="#">首页</a> <span>/</span>
+				<span id="title_name">新闻资讯</span>
+			</div>
+			<div class="main-title">
+				<!-- “不忘初心 牢记使命”公司党委组织党员赴延安梁家河开展主题党日活动 -->
+			</div>
+			<div class="desc">
+				<span class="showDate">发布日期：2019/6/25 16:27:52</span> 
+				<span style="margin-left: 8px; margin-right: 8px;">来源：本站 </span> 
+				<!-- <span style="margin-left: 8px; margin-right: 8px;">浏览次数：555 </span> -->
+					 <span>
+					字号： </span>
+				<button id="reduce">-A</button>
+				<button id="add">+A</button>
+			</div>
+		</div>
+	</div>
+	<div id="detail">
+		<div class="w">
+			<!-- <div class="left-panel">
+				<div class="title">新闻资讯</div>
+				<ul>
+					<li><a href="#">公司动态</a></li>
+					<li><a href="#">媒体报道</a></li>
+					<li><a href="#">公示公告</a></li>
+				</ul>
+			</div> -->
+			<div class="infoleftbar" th:include="infoleftbar :: infoleftbar">
+            </div>
+			<div class="right-panel" class="productDetail">
+				<!-- <span style="font-size: 16px; font-family: 宋体">“七·一”前夕，为纪念建党</span><span
+					style="font-size: 16px; font-family: 'Calibri', sans-serif">98</span><span
+					style="font-size: 16px; font-family: 宋体">周年，回顾党的光辉历史，进一步激发公司基层党组织和党员干部活力，公司党委组织</span><span
+					style="font-size: 16px; font-family: 'Calibri', sans-serif">50</span><span
+					style="font-size: 16px; font-family: 宋体">名党员代表赴延安、梁家河等红色教育基地，开展“不忘初心</span>
+				<span style="font-size: 16px; font-family: 宋体">牢记使命”主题党日活动，参加本次活动的有公司部分高管、优秀党员和新老党员代表。</span>
+				</p>
+				<p style="text-align: center;">
+					<img style="margin-top: 15px; margin-bottom: 15px;"
+						src="./images/liability_01.jpg" title="2.jpg" alt="2.jpg" />
+				</p>
+				<p style="text-indent: 2em;">
+					<span style="font-size: 16px; font-family: 宋体">在延安的宝塔山上，</span><span
+						style="font-size: 16px; font-family: 'Calibri', sans-serif">6</span><span
+						style="font-size: 16px; font-family: 宋体">名预备党员、</span><span
+						style="font-size: 16px; font-family: 'Calibri', sans-serif">11</span><span
+						style="font-size: 16px; font-family: 宋体">名新转正党员在党旗前庄严宣誓，全体党员面对党旗，重温入党誓词，再次接受心灵的洗礼。在延安革命纪念馆和枣园、杨家岭革命旧址，通过观看历史图片、实物资料、聆听讲解，详细了解了老一辈革命家在延安坚持抗日战争，领导和指挥解放战争并夺取全国胜利的光辉历程，党员干部受到了深刻的教育和启发。在延川县梁家河村，大家参观了梁家河村委会、村史馆、知青旧居后，切身感悟了习总书记当年在梁家河艰苦环境下所表现出的“坚定信念、一心为民、艰苦奋斗、实干担当、敢为人先、廉洁奉公”的精神。</span><br />
+				</p>
+				<p style="text-align: center;">
+					<span style="font-size: 16px; font-family: 宋体"><img
+						src="/upload/image/20190625/6369707685560831747391767.jpg"
+						title="6.jpg" alt="6.jpg" /></span>
+				</p>
+				<p style="text-align: center;">
+					<img src="/upload/image/20190625/6369707669859404165360716.jpg"
+						title="5.jpg" alt="5.jpg" />
+				</p>
+				<p style="text-align: center;">
+					<img src="/upload/image/20190625/6369707670843765897567581.jpg"
+						title="1.jpg" alt="1.jpg" />
+				</p>
+				<p style="text-align: center;">
+					<img src="/upload/image/20190625/6369707671918607787322088.jpg"
+						title="3.jpg" alt="3.jpg" />
+				</p>
+				<p style="text-align: center;">
+					<br />
+				</p>
+				<p style="text-align: center;">
+					<img src="/upload/image/20190625/6369707673391250379503670.jpg"
+						title="4.jpg" alt="4.jpg" />
+				</p>
+				<p style="text-indent: 2em;">
+					<span style="font-size: 16px; font-family: 宋体">经过为期</span><span
+						style="font-size: 16px; font-family: 'Calibri', sans-serif">3</span><span
+						style="font-size: 16px; font-family: 宋体">天的体验式教育，党员们受到了一次深刻的党性和革命传统教育，大家纷纷表示，要在以后的工作中更加坚定理想信念，把延安精神、梁家河精神内化于心、外化于行，立足本职岗位，充分发挥共产党员的先锋模范作用，为实现公司“以科技创新为本，以患者需求为中心，为人类创造健康生活”的发展目标而努力奋斗。</span> -->
+			</div>
+		</div>
+	</div>
+	<div class="footerBar" th:include="footer :: footer"></div>
+</body>
+<script>
+	$(function() {
+		var flag = true;
+		window.onscroll = function() {
+			if (document.documentElement.scrollTop > 50) {
+				$('.a').siblings().show()
+				$('.a').hide()
+				if (flag) {
+					$('.header').animate({
+						height : '50px'
+					})
+				}
+				$('#headerUp').hide(5)
+				$('#headerUp').siblings().css({
+					marginTop : '4px'
+				})
+				$('.header').css({
+					position : 'fixed',
+					backgroundColor : '#ffffff',
+					zIndex : 9999,
+					width : '100%'
+				})
+				flag = false;
+			} else {
+				$('.a').siblings().hide()
+				$('.a').show()
+				flag = true;
+				$('.header').css({
+					position : 'relative',
+					height : '120px'
+				})
+				$('#headerUp').siblings().css({
+					marginTop : '-13px'
+				})
+
+				$('#headerUp').show(5)
+
+			}
+		}
+	})
+</script>
+<script>
+	$(function() {
+		$('#lanuage').on('click', function() {
+			$(this).toggleClass('active')
+		})
+		$('#search').click(function() {
+			$('.search .main').toggle()
+		})
+
+		$('#linkButton').click(function() {
+			$(this).toggleClass('active')
+			$('#dropdown-menu').toggle()
+		})
+		$('#add').click(
+				function() {
+					$('#detail .w .productDetail').css(
+							{
+								fontSize : parseFloat($(
+										'#detail .w .productDetail').eq(0).css(
+										'font-size')) + 1
+							})
+				})
+		$('#reduce').click(
+				function() {
+					$('#detail .w .productDetail ').css(
+							{
+								fontSize : parseFloat($(
+										'#detail .w .productDetail').eq(0).css(
+										'font-size')) - 1
+							})
+				})
+	})
+</script>
+</html>

@@ -1,0 +1,166 @@
+.news-main{
+	width:1000px;
+	margin:15px auto;
+	color: #666;
+	font-size: 14px;
+	position: relative;
+}
+.news-main:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.news-main a{
+	color: #666;
+	text-decoration: none;
+}
+/*�����ϵ����*/
+.news-contact{
+	width: 294px;
+	padding: 5px;
+	float: left;
+	line-height: 24px;
+	background-color: #fff; 
+	border: 2px solid #eee;
+	padding: 20px 20px;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.contact-word{
+	padding: 0 10px;
+}
+.contact-word p{
+	overflow: hidden;
+}
+#news-addres{
+	width: 170px;
+	float: right;
+	word-break:break-all;
+}
+.contact-title{
+	font-weight: normal;
+	font-size: 30px;
+	color: #333;
+	margin-bottom: 10px;
+}
+.contact-pic{
+	border: 2px solid #eee;
+	padding: 10px;
+}
+/*�����������*/
+.new-container{
+	width: 682px;
+	float: right;
+}
+.news-item{
+	border: 2px solid #eee;
+	background: #fff;
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+.news-item img{
+	width: 200px;
+	vertical-align: middle;
+	float: left;
+	margin: 20px;
+	box-sizing: border-box;
+}
+.news-item-content{
+	margin-left: 240px;
+	padding: 20px 40px 20px 0;
+}
+.news-item-content h1{
+	font-weight: normal;
+	font-size: 30px;
+	color: #333;
+	margin: 10px 0;
+}
+
+/*�ֲ�2*/
+#scrollPics{
+    width: 230px;
+    margin:0 auto;
+    overflow: hidden;
+    position:relative;
+}
+.slider{
+	width:690px;
+	overflow: hidden;
+}
+#scrollPics .slider img{
+	width: 100%;
+}
+.slider li{
+	float:left;
+	width: 230px;
+}
+.num{
+	overflow: hidden;
+    /*position:absolute;
+    left:50%;
+    bottom:20px;
+    margin-left: -60px;*/
+}
+#scrollPics .num li{
+    float: left;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 3px 8px;
+    background-color: #ddd;
+}
+#scrollPics .num li.on{
+    background-color: #000;
+    color: #fff;
+    font-size: 12px;
+}
+
+/*��������ҳ��*/
+.new-detail{
+	background-color: #fff;
+	padding: 20px;
+}
+.new-detail-title{
+	border-bottom: 1px solid #00A0D4;
+}
+.new-detail-container>h1{
+	text-align: center;
+	margin: 15px 0;
+	font-weight: normal;
+	color: #333;
+}
+.news-introduce{
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+.news-introduce img{
+	width: 200px;
+	vertical-align: middle;
+	float: left;
+	margin: 20px;
+	box-sizing: border-box;
+}
+.news-introduce-detail{
+	margin-left: 280px;
+	padding: 20px 40px 20px 0;
+}
+.news-introduce-detail h4{
+	font-weight: normal;
+	font-size: 15px;
+}
+.news-detail-content{
+	text-indent: 2em;
+	font-size: 16px;
+	padding: 0 10px;
+}
+.news-detail-content p{
+    margin: 12px 0;
+    font-size: 18px;
+    overflow: visible;
+    font: 16px/30px "Microsoft Yahei";
+    word-break: break-all;
+    line-height: 38px;
+}

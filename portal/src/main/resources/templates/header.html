@@ -1,0 +1,63 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html>
+	<meta charset="utf-8"/>
+<!-- <head>
+	<script th:src="@{/js/portal/header.js}"></script>
+	<script>
+	    $(function () {
+	        alert()
+	    })
+	</script>
+</head> -->
+<body>
+	<div class="headerBar" th:fragment="header">
+		<div class="header">
+			<div class="w">
+				<div class="left-logo">
+					<a href="#"> <img class="a" th:src="@{/img/portal/01.jpg}" alt="" style="width:465px;height: 45px;margin-top: 61px;margin-left:-9px;">
+						<img style="display: none; width: 120px; height: 50px;"
+						th:src="@{/img/portal/00.jpg}" alt="">
+					</a>
+				</div>
+				<div class="right-main">
+					<div id="headerUp" class="up-panel">
+						<ul>
+							<li>
+								<ul>
+									
+								</ul>
+							</li>
+
+							<li class="search">
+								<div style="display: none;" class="main">
+									<div class="left">
+										
+									</div>
+									<div class="right">
+										
+									</div>
+								</div></li>
+						</ul>
+					</div>
+					<div class="down-panel">
+						<ul id="titlelist">
+							<li ><a data-id="0" href="/">首页</a></li><!-- /jump/p?name=productInfo&type_id=1&dataUrl=http://localhost:8089/product/self/5 -->
+							<li><a data-id="1" href="/jump/p?name=product/productSyno&type_id=1&dataUrl=/product/self/5">公司概况</a></li>
+							<li><a data-id="4" href="/jump/p?name=product/productList&type_id=4&listUrl=/product/datalist">公司产品</a></li>
+							<li><a data-id="5" href="/jump/p?name=product/productList&type_id=5&listUrl=/product/datalist">科研技术</a></li>
+							<li><a data-id="6" href="/jump/p?name=product/productSyno&type_id=6&dataUrl=/product/self/7">人力资源</a></li>
+							<li><a data-id="3" href="/jump/p?name=product/productList&type_id=3&listUrl=/product/datalist">新闻中心</a></li>
+							<li><a data-id="2" href="/jump/p?name=product/productSyno&type_id=2&dataUrl=/product/self/6">联系我们</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+<script>
+    $(function () {
+    })
+</script>
+</html>

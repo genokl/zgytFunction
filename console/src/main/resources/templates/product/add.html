@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title >文章详情</title>
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/normalize.css}">
+<link rel="stylesheet" th:href="@{/css/quick-layout-min.css}">
+<link rel="stylesheet" th:href="@{/css/main.css}">
+<link rel="stylesheet"  th:href="@{/js/summernote/summernote.css}">
+<!-- <link rel="stylesheet" type="text/css" href="js/uploadifive/uploadifive.css">
+ --><style>
+body {
+	margin: 0px;
+	padding: 20px;
+	font-family: "lucida Grande",Verdana,"Microsoft YaHei";
+    font-size: 12px;
+}
+
+#bd div {
+	margin: 10px 0px;
+	display: none;
+	font-size: 12px;
+}
+#tj {
+	-webkit-column-count: 1; /* Safari 和 Chrome */
+	column-count: 1;
+	text-align: left;
+}
+#tj input {
+	margin: 10px;
+}
+#activityBaseInfo div{
+    width:80%;
+    height:20px;
+    display:block;
+    margin-bottom:10px
+}
+#activityRule div{
+    width:80%;
+    height:20px;
+    display:block;
+    margin-bottom:10px
+}
+h3{
+    margin-bottom:5px;
+}
+.hiden{
+	display: none;
+}
+</style>
+</head>
+<body>
+	
+	<h1 id="pageTitle">创建文章</h1>
+	<!-- 图片上传 -->
+	<form id="addfile" >
+	    <input type="file" name="file" /><br/><br/>
+	    <!-- <input type="submit" value="上传文件" /> -->
+	    <button type="button" id="uploadfileButton"  >提交1</button>
+	</form>
+	
+	
+	<form id="f1">
+		<div id="ad0">
+			<img class="hidden" id="image" style="height: 40px;width: 40px;">
+			<input type="button" class="delimg hidden"  style="height: 30px;width: 50px;margin-top: -20px;margin-left: 0px" value="删除">
+		</div>
+		<br><br><br>
+		<div id="ad1">
+		  <span style="width:85px;display:inline-block" data-value="false">文章题目：</span>
+		  <textarea rows="" cols=""   id="title" data-value="false"></textarea>
+		  <div id="title" class="alert " style="display:inline-block;width:20%;margin: 0px;color: #f00;padding: 0px;vertical-align: top;"></div>
+		</div>
+		<br>
+		<div id="ad2">
+		  <span style="width:85px;display:inline-block" data-value="false">文章概述：</span>
+		  <textarea rows="" cols=""  id="productSynopsis" data-value="false"></textarea>
+		  <div id="articleSynopsisMsg" class="alert " style="display:inline-block;width:20%;margin: 0px;color: #f00;padding: 0px;vertical-align: top;"></div>
+		</div>
+		<br><br><br>
+		<div id="ad3">
+		  <span style="width:85px;display:inline-block" data-value="false">文章显示时间：</span>
+		  <input type="text" id="showDate" readonly="readonly">
+		  <img onclick="WdatePicker({el:'showDate',dateFmt:'yyyy-MM-dd HH:mm'})" th:src="@{/js/My97DatePicker/skin/datePicker.gif}" width="16" height="22" align="absmiddle">
+		</div>
+		<br>
+		<div id="ad4">
+		  <span style="width:85px;display:inline-block" data-value="false">文章类型：</span>
+		  <select id="productType"  style="width: 162px;">
+		  	<option value="">  --请选择--  </option>
+		  	<!-- <option value="1">公司概况</option>
+		  	<option value="2">联系我们</option> -->
+		  	<option value="3">新闻</option>
+		  	<option value="4">公司产品</option>
+		  	<option value="5">科研技术</option>
+		  	<!-- <option value="6">人力资源</option> -->
+		  </select>
+		  <div id="articleTitleMsg" class="alert " style="display:inline-block;width:20%;margin: 0px;color: #f00;padding: 0px;vertical-align: top;"></div>
+		</div>
+		<br>
+		<div id="ad5">
+		  <textarea type="text"  name="content" id="summernote"></textarea>
+		</div>
+		<br><br><br><br><br>
+		<input type="hidden" id="id">
+		<input type="hidden" id="isDel">
+		<input type="hidden" id="isSale">
+		<input type="hidden" id="createDate">
+		<input type="hidden" id="productHtmlAddress">
+		<input type="hidden" id="submitUrl">
+		<input type="hidden" id="orderCode">
+	</form>
+	
+	
+	
+	
+	<!-- <input type="button" value="创建内容" id="createArticle" style="display: dispaly;"> -->
+	<div class="fixed-bottom-box">
+		<button type="button" id="save" class="btn btn-primary pl20 pr20">保存</button>
+	</div>
+	<!-- <input type="hidden"  id="onUpload" onclick="$('#file_upload').uploadifive('upload')"> -->
+	
+	
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" th:src="@{/js/My97DatePicker/WdatePicker.js}"></script> 
+	<script  th:src="@{/js/bootstrap.min.js}"></script>
+	<script  th:src="@{/js/jquery.myPagination6.0.js}"></script>
+	<script  th:src="@{/js/public.js}"></script>
+    <!-- <script charset="utf-8" th:src="@{/js/wangEditor/wangEditor.js}"></script> -->
+   
+    <script charset="utf-8" th:src="@{/js/summernote/summernote.js}"></script>
+	<script  th:src="@{/js/product/add.js}"></script>
+	
+	<!-- <script type="text/javascript" charset="utf-8" src="js/baiduUE/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/baiduUE/ueditor.all.min.js"> </script>
+    <script type="text/javascript" charset="utf-8" src="js/baiduUE/lang/zh-cn/zh-cn.js"></script> -->
+    
+    <!-- <script type="text/javascript" charset="utf-8" src="js/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/ueditor/ueditor.all.js"> </script>
+    <script type="text/javascript" charset="utf-8" src="js/ueditor/lang/zh-cn/zh-cn.js"></script> -->
+    
+</body>
+</html>

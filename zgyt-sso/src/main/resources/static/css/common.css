@@ -1,0 +1,63 @@
+html, body
+{
+	font-family:"寰蒋闆呴粦";
+	margin:0;
+	padding:0;
+}
+.list-group-item{
+	border:0;
+	border-radius:0;
+}
+.list-group-item:hover{
+	background:#edf6fe;
+	border:0;
+	border-radius:0;
+}
+.dd-year{
+	font-size:14px;
+	color:#0082fe;
+	line-height:34px;
+	width:68px;
+	background:#e0effd;
+}
+.dd-date{
+	font-size:24px;
+	color:#0082fe;
+	background:#c7e1fa;
+	line-height:34px;
+	width:68px;
+	margin:0;
+}
+.dd-title{
+	font-size:18px;
+	font-weight:bold;
+	color:#000;
+	line-height:18px;
+}
+.dd-content{
+	font-size:14px;
+	color:#404040;
+	height:35px;
+}
+.dd-more{
+	font-size:14px;
+	border:1px solid #0082fe;
+	line-height:36px;
+	height:36px;
+	width:160px;
+	border-radius:0;
+	padding:0;
+}
+.dd-more a {
+	color:#0082fe;
+	line-height:35px;
+	height:35px;
+	display:block;
+	width:100%;
+}
+
+.list-group-item:hover  .dd-more a,.dd-more a:hover{
+	text-decoration:none;
+	color:#fff;
+	background:#0082fe;
+}

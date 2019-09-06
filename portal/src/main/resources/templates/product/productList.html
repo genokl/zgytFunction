@@ -1,0 +1,148 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">-->
+	<link rel="stylesheet" th:href="@{/css/page.css}">
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <link rel="stylesheet" th:href="@{/node_modules/swiper/dist/css/swiper.min.css}">
+    <script th:src="@{/node_modules/jquery/dist/jquery.min.js}"></script>
+    <script th:src="@{/node_modules/swiper/dist/js/swiper.js}"></script>
+    <script th:src="@{/js/public.js}"></script>
+    <script th:src="@{/js/portal/header.js}"></script>
+    <script th:src="@{/js/portal/jquery.myPagination6.0.js}"></script>
+    <script th:src="@{/js/portal/product/productList.js?data=2}"></script>
+<!--    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>-->
+</head>
+<body>
+<div class="headerBar" th:include="header :: header">
+ 
+</div>
+<div id="listOfNoImg">
+    <div style="height: auto;" class="banner">
+        <img style="width: 100%;"  alt="banner" class="bannerImg"><!-- @{/img/portal/banner/company_situation.jpg} -->
+    </div>
+    <div class="content">
+        <div class="w">
+            <!-- <div class="content-left">
+                <ul>
+                    <li class="tit">新闻咨询</li>
+                    <li><a href="" class="active">公司动态</a></li>
+                    <li><a href="">媒体报道</a></li>
+                    <li><a href="">公示公告</a></li>
+                </ul>
+            </div> -->
+            <div class="listleftbar" th:replace="listleftbar :: listleftbar">
+            </div>
+            <div class="content-right">
+                <div class="top">
+<!--                    <h2>临时广告</h2>-->
+                    <ul>
+                        <li>您当前的位置：</li>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="#" class="pagehref"></a></li>
+                    </ul>
+                </div>
+                <div class="center productList">
+                        <!-- <li>
+                            <a href="#">
+                                <img src="./images/liability_01.jpg" alt="">
+                                <ol>
+                                    <li>標題</li>
+                                    <li>详情</li>
+                                    <li>2019-4-7</li>
+                                </ol>
+                            </a>
+                        </li>
+                    </ul>  -->
+                </div>
+                <div style="margin-top: 80px;" class="bottom">
+                	<div>
+						<ul class="pagination pagination-sm " style="margin-top: -10px; margin-left: 15px;" id="pageul"></ul>
+						<div >
+							<div id="pagination"></div> 
+						</div>
+					</div>
+                    <!-- <ul class="bottom-ul">
+                        <li>共224记录</li>
+                        <li><a href="">1</a></li>
+                        <li><a href="">2</a></li>
+                        <li><a href="">3</a></li>
+                        <li><a href="">4</a></li>
+                        <li><a href="">5</a></li>
+                        <li><a href="">6</a></li>
+                        <li>...</li>
+                        <li><a href="">31</a></li>
+                        <li><a href="">下一页</a></li>
+                    </ul> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" class="productType" value="">
+<input type="hidden" class="page" value="0">
+<input type="hidden" class="size" value="5">
+
+<div class="footerBar" th:include="footer :: footer">
+ 
+</div>
+</body>
+<script>
+    $(function () {
+        var flag=true;
+        window.onscroll=function () {
+            if(document.documentElement.scrollTop>50){
+                $('.a').siblings().show()
+                $('.a').hide()
+                if(flag){
+                    $('.header').animate({
+                        height:'50px'
+                    })
+                }
+                $('#headerUp').hide(5)
+                $('#headerUp').siblings().css({
+                    marginTop:'4px'
+                })
+                $('.header').css({
+                    position:'fixed',
+                    backgroundColor:'#ffffff',
+                    zIndex:9999,
+                    width:'100%'
+                }) 
+                flag=false;
+            }else{
+                $('.a').siblings().hide()
+                $('.a').show()
+                flag=true;
+                $('.header').css({
+                    position:'relative',
+                    height:'120px'
+                })
+                $('#headerUp').siblings().css({
+                    marginTop:'-13px'
+                })
+
+                $('#headerUp').show(5)
+
+            }
+        }
+    })
+</script>
+<script>
+    $(function () {
+        $('#lanuage').on('click',function () {
+            $(this).toggleClass('active')
+        })
+        $('#search').click(function () {
+            $('.search .main').toggle()
+        })
+        $('#linkButton').click(function () {
+            $(this).toggleClass('active')
+            $('#dropdown-menu').toggle()
+        })
+
+    })
+</script>
+</html>

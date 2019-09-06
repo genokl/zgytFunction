@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>北京中公远通科技有限公司</title>
+<!--    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">-->
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <link rel="stylesheet" th:href="@{/node_modules/swiper/dist/css/swiper.min.css}">
+    <script th:src="@{/node_modules/jquery/dist/jquery.min.js}"></script>
+    <script th:src="@{/node_modules/swiper/dist/js/swiper.js}"></script>
+    <script th:src="@{/js/public.js}"></script>
+    <script th:src="@{/js/portal/header.js}"></script>
+    <script th:src="@{/js/portal/index.js?da=2}"></script>
+<!--    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>-->
+</head>
+<body>
+<div class="headerBar" th:replace="header :: header">
+ 
+</div>
+<div style="width: 100%;" class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <a href="#">                
+            	<img th:src="@{/zgytimg/lunbo/1.jpg}" alt="">
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a href="#">
+                <img th:src="@{/zgytimg/lunbo/2.jpg}" alt="">
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a href="#">
+                <img th:src="@{/zgytimg/lunbo/3.jpg}" alt="">
+            </a>
+        </div>
+
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+
+    <!-- 如果需要导航按钮 -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- 如果需要滚动条 -->
+    <div class="swiper-scrollbar"></div>
+</div>
+<div class="w" id="index">
+
+    <div class="production" style="margin-top: 50px;">
+        <div class="left-panel">
+            <ul id="type">
+                <li class="current"><!-- <img class="one" src="images/index_product_01_a@1,5x.png" alt=""><img class="two" src="images/index_product_02_a@1,5x.png" alt=""> --><span>产品介绍</span></li>
+                 <!-- <li><img class="one" src="images/index_product_01_c@1,5x.png" alt=""><img class="two" src="images/index_product_02_c@1,5x.png" alt=""><span>重点产品</span></li> -->
+            </ul>
+        </div>
+        <div id="typeMain" class="right-panel">
+            <div class="list-item productList">
+                <!--<ul>
+                    <!-- <li>
+                        <a href="#">
+                            <img src="images/201812051507215629.jpg" alt="">
+                            <span>注射用紫杉醇</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/201812051507215629.jpg" alt="">
+                            <span>注射用紫杉醇</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/201812051507215629.jpg" alt="">
+                            <span>注射用紫杉醇</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/201812051507215629.jpg" alt="">
+                            <span>注射用紫杉醇</span>
+                        </a>
+                    </li> 
+                </ul>-->
+            </div>
+            <div style="display: none;" class="list-item">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="images/201812051507215629.jpg" alt="">
+                            <span>注射用2紫杉醇</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/201812051507215629.jpg" alt="">
+                            <span>注射用3紫杉醇</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/201812051507215629.jpg" alt="">
+                            <span>注射用紫杉3醇</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/201812051507215629.jpg" alt="">
+                            <span>注射3用紫杉醇</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="four-img">
+        <ul>
+            <li>
+                <a href="/jump/p?name=product/productList&type_id=5&listUrl=/product/datalist">
+                    <img th:src="@{/img/portal/tech.jpg}" alt="">
+                    <h2>科研技术</h2>
+                    <div class="button">
+                        了解详情 <span class="iconfont">&#xe635;</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="/jump/p?name=product/productSyno&type_id=6&dataUrl=/product/self/7">
+                    <img th:src="@{/img/portal/hr.jpg}" alt="">
+                    <h2>人力资源</h2>
+                    <div class="button">
+                        了解详情 <span class="iconfont">&#xe635;</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="/jump/p?name=product/productList&type_id=4&listUrl=/product/datalist">
+                    <img th:src="@{/img/portal/product.jpg}" alt="">
+                    <h2>公司产品</h2>
+                    <div class="button">
+                        了解详情 <span class="iconfont">&#xe635;</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="/jump/p?name=product/productList&type_id=3&listUrl=/product/datalist">
+                    <img th:src="@{/img/portal/news.jpg}" alt="">
+                    <h2>新闻中心</h2>
+                    <div class="button">
+                        了解详情 <span class="iconfont">&#xe635;</span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+   <!--  <div class="second-banner">
+        <ul>
+            <li style="float: left;">
+                <a href="#">
+                    <img src="images/liability_01.jpg" alt="">
+                    <h2>公益活动</h2>
+                </a>
+            </li>
+            <li style="float: right;">
+                <a href="#">
+                    <img src="images/liability_02.jpg" alt="">
+                    <h2>领导关怀</h2>
+                </a>
+            </li>
+        </ul>
+    </div> -->
+    <!-- <div class="news">
+        <div class="left-panel">
+            <img src="images/90713162537.png" alt="">
+        </div>
+        <div class="right-panel">
+            <div class="title">
+                公司动态
+            </div>
+            <div style="border-top: 1px solid #545454;padding-top: 15px;" class="main">
+                <div class="first">
+                    <a href="#">
+                        <div class="left-panel">
+                            <img src="images/liability_01.jpg" alt="">
+                        </div>
+                        <div class="right-panel">
+                            <h3>恒瑞医药喜获“全国五一劳动奖状”荣誉称号</h3>
+                            <div class="desc">
+                                2019年庆祝“五一”国际劳动节暨全国五一劳动奖和全国工人先锋号表彰大会在北京人民大会堂举行。恒瑞医药作为国内医药创新和高质量发展的代表企业，荣获“全国五一劳动奖状”。
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <ul>
+                    <li><a href="#">
+                        <div class="left-panel">
+                            <img src="images/liability_01.jpg" alt="">
+                        </div>
+                        <div class="right-panel">
+                            <h3>恒瑞医药喜获“全国五一劳动奖状”荣誉称号</h3>
+                            <div class="desc">
+                                2019年庆祝“五一”国际劳动节暨全国五一劳动奖和全国工人先锋号表彰大会在北京人民大会堂举行。恒瑞医药作为国内医药创新和高质量发展的代表企业，荣获“全国五一劳动奖状”。
+                            </div>
+                        </div>
+                    </a></li>
+                    <li><a href="#">
+                        <div class="left-panel">
+                            <img src="images/liability_01.jpg" alt="">
+                        </div>
+                        <div class="right-panel">
+                            <h3>恒瑞医药喜获“全国五一劳动奖状”荣誉称号</h3>
+                            <div class="desc">
+                                2019年庆祝“五一”国际劳动节暨全国五一劳动奖和全国工人先锋号表彰大会在北京人民大会堂举行。恒瑞医药作为国内医药创新和高质量发展的代表企业，荣获“全国五一劳动奖状”。
+                            </div>
+                        </div>
+                    </a></li>
+                    <li><a href="#">
+                        <div class="left-panel">
+                            <img src="images/liability_01.jpg" alt="">
+                        </div>
+                        <div class="right-panel">
+                            <h3>恒瑞医药喜获“全国五一劳动奖状”荣誉称号</h3>
+                            <div class="desc">
+                                2019年庆祝“五一”国际劳动节暨全国五一劳动奖和全国工人先锋号表彰大会在北京人民大会堂举行。恒瑞医药作为国内医药创新和高质量发展的代表企业，荣获“全国五一劳动奖状”。
+                            </div>
+                        </div>
+                    </a></li>
+                    <li><a href="#">
+                        <div class="left-panel">
+                            <img src="images/liability_01.jpg" alt="">
+                        </div>
+                        <div class="right-panel">
+                            <h3>恒瑞医药喜获“全国五一劳动奖状”荣誉称号</h3>
+                            <div class="desc">
+                                2019年庆祝“五一”国际劳动节暨全国五一劳动奖和全国工人先锋号表彰大会在北京人民大会堂举行。恒瑞医药作为国内医药创新和高质量发展的代表企业，荣获“全国五一劳动奖状”。
+                            </div>
+                        </div>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+    </div> -->
+</div>
+<div class="footerBar" th:include="footer :: footer">
+ 
+</div>
+</body>
+<script>
+    $(function () {
+        var flag=true;
+        window.onscroll=function () {
+        	console.log(document.documentElement.scrollTop)
+            if(document.documentElement.scrollTop>50){
+                $('.a').siblings().show()
+                $('.a').hide()
+                if(flag){
+                    $('.header').animate({
+                        height:'50px'
+                    })
+                }
+                $('#headerUp').hide(5)
+                $('#headerUp').siblings().css({
+                    marginTop:'4px'
+                })
+                $('.header').css({
+                    position:'fixed',
+                    backgroundColor:'#ffffff',
+                    zIndex:9999,
+                    width:'100%'
+                })
+                flag=false;
+            }else{
+                $('.a').siblings().hide()
+                $('.a').show()
+                flag=true;
+                $('.header').css({
+                    position:'relative',
+                    height:'120px'
+                })
+                $('#headerUp').siblings().css({
+                    marginTop:'-13px'
+                })
+
+                $('#headerUp').show(5)
+
+            }
+        }
+    })
+</script>
+<script>
+    $(function () {
+        $('#lanuage').on('click',function () {
+            $(this).toggleClass('active')
+        })
+        $('#search').click(function () {
+            $('.search .main').toggle()
+        })
+        var mySwiper = new Swiper ('.swiper-container', {
+            loop: true, // 循环模式选项
+
+            // 如果需要分页器
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // 如果需要前进后退按钮
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // 如果需要滚动条
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+        })
+        $('#type').on('click','li',function () {
+            $(this).addClass('current').siblings().removeClass('current')
+            $('#typeMain').children().eq($(this).index()).show().siblings().hide()
+        })
+        $('#linkButton').click(function () {
+            $(this).toggleClass('active')
+            $('#dropdown-menu').toggle()
+        })
+    })
+</script>
+</html>

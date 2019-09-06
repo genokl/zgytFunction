@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      uri: http://configserver.app:9998
+    allow-override: true
+  application:
+    name: imobiletracksso

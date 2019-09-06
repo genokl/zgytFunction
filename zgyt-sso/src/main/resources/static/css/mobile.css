@@ -1,0 +1,10 @@
+
+.header, .content, .footer { position: absolute; left: 0; right: 0; }
+.header { height: 48px; padding: 0 5px; background-color: #21292B; color: #fff; top: 0; z-index: 1; }
+
+
+.footer {height: 52px; border-top: 1px solid #dfdfdf; background-color: #fcfcfc; bottom: 0; z-index: 1; }
+.footer > a { width: 25%; text-align: center; color: #999; float: left; font-size: 14px; }
+.footer > a > i { display: block; height: 35px; line-height:35px; font-size:20px;  margin-bottom: -4px;}
+.footer > .active { color: #fff;text-decoration: none;background-color: #337ab7;}
+.content {top:0px; bottom: 52px; overflow-y: scroll; margin-left: calc(100vw - 100%);padding-left: calc(100vw - 100%);}
