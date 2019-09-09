@@ -3,6 +3,7 @@ package cn.zgyt;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
@@ -11,6 +12,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import cn.zgyt.entiry.Product;
 import cn.zgyt.entiry.ProductType;
+import cn.zgyt.filter.PicFilter;
 import cn.zgyt.util.PortalConfig;
 @EnableTransactionManagement
 @SpringBootApplication
@@ -34,5 +36,13 @@ public class PortalApplication {
 				config.exposeIdsFor(Product.class,ProductType.class);
 			}
 		};
+	}
+	
+	@Bean
+	public FilterRegistrationBean filterRegistrationBean() {
+		FilterRegistrationBean bean = new FilterRegistrationBean();
+		bean.setFilter(new PicFilter());
+		bean.addUrlPatterns("/*");
+		return bean;
 	}
 }
