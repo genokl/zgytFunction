@@ -9,6 +9,7 @@ public class PortalConfig {
 	
 	public static String PICPath;
 	public static String PICRealPath;
+	public static String PICUrlHeader;
 	
 	public static String getPICPath() {
 		return PICPath;
@@ -21,6 +22,12 @@ public class PortalConfig {
 	}
 	public static void setPICRealPath(String pICRealPath) {
 		PICRealPath = pICRealPath;
+	}
+	public static String getPICUrlHeader() {
+		return PICUrlHeader;
+	}
+	public static void setPICUrlHeader(String pICUrlHeader) {
+		PICUrlHeader = pICUrlHeader;
 	}
 	
 	

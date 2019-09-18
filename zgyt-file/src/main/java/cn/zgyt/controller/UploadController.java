@@ -19,7 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.google.gson.JsonObject;
 
 import cn.zgyt.util.CommonUtils;
-import cn.zgyt.utils.ConsoleConfig;
+import cn.zgyt.util.Config;
  
 /**
  * 首页重定向配置
@@ -34,7 +34,7 @@ public class UploadController {
 	private OAuth2RestOperations client;
 	
 	@Autowired
-	private ConsoleConfig config;
+	private Config config;
 	
 	@ResponseBody
     @PostMapping("/upload")
