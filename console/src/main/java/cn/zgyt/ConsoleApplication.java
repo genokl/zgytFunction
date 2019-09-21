@@ -4,8 +4,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
@@ -22,7 +20,7 @@ import cn.zgyt.entiry.ProductType;
 import cn.zgyt.utils.ConsoleConfig;
 @EnableTransactionManagement
 @SpringBootApplication
-@EnableDiscoveryClient
+//@EnableDiscoveryClient
 public class ConsoleApplication {
 
 	public static void main(String[] args) {
@@ -44,11 +42,11 @@ public class ConsoleApplication {
 		};
 	}
 	
-	@Bean
-	@LoadBalanced
-	public OAuth2RestOperations restTemplate(OAuth2ClientContext oauth2ClientContext) {
-		return new OAuth2RestTemplate(resource(), oauth2ClientContext);
-	}
+//	@Bean
+//	@LoadBalanced
+//	public OAuth2RestOperations restTemplate(OAuth2ClientContext oauth2ClientContext) {
+//		return new OAuth2RestTemplate(resource(), oauth2ClientContext);
+//	}
 	
 	@Value("${security.oauth2.client.user-authorization-uri}")
 	private String authorizeUrl;

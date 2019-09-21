@@ -19,7 +19,7 @@
 //import com.google.gson.JsonObject;
 //
 //import cn.zgyt.util.CommonUtils;
-//import cn.zgyt.util.Config;
+//import cn.zgyt.utils.ConsoleConfig;
 // 
 ///**
 // * 首页重定向配置
@@ -27,14 +27,14 @@
 // */
 //@Controller
 //@RequestMapping("/file")
-//public class UploadController {
+//public class UploadControllerBak {
 //	
 //	@Autowired
 //	@LoadBalanced
 //	private OAuth2RestOperations client;
 //	
 //	@Autowired
-//	private Config config;
+//	private ConsoleConfig config;
 //	
 //	@ResponseBody
 //    @PostMapping("/upload")

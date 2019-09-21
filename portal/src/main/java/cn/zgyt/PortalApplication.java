@@ -3,7 +3,6 @@ package cn.zgyt;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
@@ -15,7 +14,7 @@ import cn.zgyt.entiry.ProductType;
 import cn.zgyt.util.PortalConfig;
 @EnableTransactionManagement
 @SpringBootApplication
-@EnableEurekaServer
+//@EnableEurekaServer
 public class PortalApplication {
 
 	public static void main(String[] args) {

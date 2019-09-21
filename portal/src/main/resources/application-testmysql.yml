@@ -7,7 +7,19 @@ server:
   #文件映射路径
   PICPath: /zgytimg/**
   PICRealPath: F:/git/zgytpic/
+  PICUrlHeader: /zgytimg/
   
+#eureka:
+#  instance:
+#    hostname: localhost
+#  client:
+#    registerWithEureka: true
+#    fetchRegistry: false
+#    serviceUrl:
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+#  dashboard:
+#    path: /eurekacenter
+      
 spring: 
   mvc:
     view:
@@ -16,8 +28,7 @@ spring:
       # 响应页面默认后缀
       suffix: .jsp
   application:
-    name: console
-    changeLogBasePath: C:/Users/epc-624/Desktop/sqlFile
+    name: portal
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     username: wzj@zgyt
@@ -38,7 +49,7 @@ spring:
   jpa:
     show-sql: false
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
   thymeleaf:
       prefix: classpath:/templates/
       mode: LEGACYHTML5 
@@ -48,10 +59,3 @@ spring:
 logging:
       path: F:/mygit/zgytpic/spring   
 #      file: F:/mygit/zgytpic/spring/springbootdemo.log
-    
-
-  
-#eureka:
-#  client:
-#    serviceUrl:
-#      defaultZone: http://p6plus:p6plus@${server.kernel.host}:${server.kernel.port}/eureka/

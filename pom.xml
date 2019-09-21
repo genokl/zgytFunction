@@ -41,5 +41,6 @@
 		<module>zgyt-sso</module> 
 		<module>portal</module> 
 		<module>zgyt-dependencies</module>
+		<module>zgyt-file</module>
 	</modules>
 </project>
