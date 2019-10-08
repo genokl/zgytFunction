@@ -11,7 +11,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import cn.zgyt.service.UserService;
 import cn.zgyt.utils.SsoConfig;
@@ -20,24 +19,41 @@ import cn.zgyt.utils.SsoConfig;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
+	
 	@Autowired
 	private SsoConfig ssoConfig;
-	@Override
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.userDetailsService(userService).passwordEncoder(passwordEncoder());
-	}
-	
+//	@Override
+//	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+//		auth.userDetailsService(userService).passwordEncoder(passwordEncoder());
+//	}
 	@Override
 	public void configure(WebSecurity web) throws Exception {
 		web.ignoring().antMatchers("/assets/**", "/css/**", "/img/**","/lib/**","/js/**","/fonts/**","/zgytimg/**");
 	}
 	
-	public static void main(String[] args) {
-		BCryptPasswordEncoder be = new BCryptPasswordEncoder();
-		String encode = be.encode("123abc");
-		System.out.println(be.matches("123abc", encode));
-		System.out.println(":"+encode);
-	}
+	@Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(userService).passwordEncoder(passwordEncoder());
+    }
+ 
+    /**
+            * 用来配置拦截保护的请求
+     */
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        //不拦截 oauth 开放的资源
+        http.csrf().disable();
+        http.requestMatchers()//使HttpSecurity接收以"/login/","/oauth/"开头请求。
+                .antMatchers("/oauth/**", "/login/**", "/logout/**","/authentication/**")
+                .and()
+                .authorizeRequests()
+                .antMatchers("/oauth/**").authenticated()
+                .and()
+                .formLogin()
+                .loginPage(ssoConfig.getLoginPage()).loginProcessingUrl(ssoConfig.getLoginProcessUrl());
+                
+    }
+    
 
 	@Autowired
 	private UserService userService;
@@ -47,29 +63,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		return new BCryptPasswordEncoder();
 	}
 
-
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		http
-		.authorizeRequests()
-			.antMatchers("/login").permitAll()
-		.and()
-			.formLogin().loginPage(ssoConfig.getLoginPage()).loginProcessingUrl(ssoConfig.getLoginProcessUrl())
-		.and()
-			.requestMatchers().antMatchers("/login","/", "/oauth/authorize", "/oauth/confirm_access","/oauth/token",ssoConfig.getLoginProcessUrl())
-		.and()
-			.authorizeRequests().anyRequest().authenticated()
-//		.and()
-//			.headers().frameOptions().disable()
-		.and().headers().frameOptions().sameOrigin()
-		.and()
-			.csrf().requireCsrfProtectionMatcher(new AntPathRequestMatcher("/oauth/authorize")).disable();
-	}
-
-
 	@Override
 	protected UserDetailsService userDetailsService() {
-		// 自定义用户信息类
 		return this.userService;
 	}
 

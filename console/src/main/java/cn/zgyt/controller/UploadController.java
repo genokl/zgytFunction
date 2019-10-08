@@ -4,14 +4,6 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.mime.MultipartEntityBuilder;
-import org.apache.http.entity.mime.content.FileBody;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.EntityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -42,6 +34,9 @@ public class UploadController {
 	@Autowired
 	private ConsoleConfig config;
 	
+	@Autowired
+	private CosController cos;
+	
 	@ResponseBody
     @PostMapping("/upload")
     public ResponseEntity<?> upload(@RequestParam("file") MultipartFile file) {
@@ -65,34 +60,11 @@ public class UploadController {
         File dest = new File(filepath);
         String mes="";
         try {
-        	CloseableHttpClient httpclient = HttpClients.createDefault();  
             file.transferTo(dest);
             JsonObject jo=new JsonObject();
             jo.addProperty("filePath", urlpath);
-            
-            String uploadUrl="http://localhost:8089/file/upload";
-            
-            HttpPost httpPost = new HttpPost(uploadUrl);
-            FileBody fileBody = new FileBody(new File(filepath));
-            MultipartEntityBuilder multipartEntityBuilder = MultipartEntityBuilder.create();
-            multipartEntityBuilder.addPart("file",fileBody);
-
-
-            HttpEntity reqEntity  = multipartEntityBuilder.build();
-            httpPost.setEntity(reqEntity);
-
-            CloseableHttpResponse response = httpclient.execute(httpPost);
-            try {
-            	if(response.getStatusLine().getStatusCode()==200) {
-            		HttpEntity entity = response.getEntity();
-            		mes= EntityUtils.toString(entity, "UTF-8");
-            	}
-            } catch (Exception e) {
-                e.printStackTrace();
-            } finally {
-              response.close();
-              dest.delete();
-            }
+            cos.uploadFile(filepath,urlpath);
+            dest.delete();
             return new ResponseEntity<Object>(mes, HttpStatus.OK);
         } catch (Exception e) {
         	e.printStackTrace();

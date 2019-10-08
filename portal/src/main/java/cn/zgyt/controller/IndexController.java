@@ -17,13 +17,10 @@ import cn.zgyt.assembler.ProductResourceAssembler;
 import cn.zgyt.entiry.Product;
 import cn.zgyt.repository.ProductRepository;
 import cn.zgyt.resource.ProductResource;
-import cn.zgyt.service.ProductDisplayService;
 @Controller
 @RequestMapping(value="/index")
 public class IndexController {  
 
-	@Autowired
-	private ProductDisplayService productDisplayService;
 	@Autowired
 	private ProductRepository productRep;
 	@Autowired

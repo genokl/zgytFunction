@@ -19,7 +19,6 @@ public class UserController {
     public Authentication principal() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 //        log.debug("user-me:{}", authentication.getName());
-        System.out.println();
         return authentication;
     }
     

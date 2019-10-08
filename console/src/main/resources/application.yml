@@ -53,15 +53,15 @@ spring:
     mode: LEGACYHTML5 
     cache: false
 
-#security:
-#  oauth2:
-#    resource:
-#      user-info-uri: http://${server.sso.host}:${server.sso.port}/sso/user
-#    client: 
-#      clientId: resource
-#      clientSecret: resourcesecret
-#      access-token-uri: http://${server.sso.host}:${server.sso.port}/sso/oauth/token
-#      user-authorization-uri: http://${server.sso.host}:${server.sso.port}/sso/oauth/authorize
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://${server.sso.host}:${server.sso.port}/sso/user
+    client: 
+      clientId: resource
+      clientSecret: resourcesecret
+      access-token-uri: http://${server.sso.host}:${server.sso.port}/sso/oauth/token
+      user-authorization-uri: http://${server.sso.host}:${server.sso.port}/sso/oauth/authorize
 #      
     
     

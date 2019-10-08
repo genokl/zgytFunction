@@ -9,13 +9,11 @@
 		<relativePath /> lookup parent from repository
 	</parent> -->
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		 <version>1.5.15.RELEASE</version>
+		<groupId>cn.zgyt</groupId>
+		<relativePath>../zgyt-dependencies</relativePath> <!-- lookup parent from repository -->
+		<artifactId>zgyt-dependencies</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>cn.zgyt</groupId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
 
 	<artifactId>zgyt-sso</artifactId>
 	<name>zgyt-sso</name>
