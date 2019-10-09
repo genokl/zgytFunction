@@ -59,8 +59,8 @@ public class CosController {
 		    // 指定要上传的文件
 		    File localFile = new File(filePath);
 		    // 指定要上传到的存储桶
-//		    String bucketName = "zgytpic-1252757547";
-		    String bucketName = "zgyttest-1252757547";
+		    String bucketName = "zgytpic-1252757547";
+//		    String bucketName = "zgyttest-1252757547";
 		    // 指定要上传到 COS 上对象键
 		    String key = "/zgytpic/"+replace;
 		    PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, key, localFile);
